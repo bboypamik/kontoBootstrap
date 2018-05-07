@@ -1,0 +1,25 @@
+.jumbotron {
+background-image: url(https://www.zybra.in/wp-content/uploads/2018/01/accountant-2.jpg);
+background-size: cover;
+height: 500px;
+font-family: "Raleway", Helvetica, Arial, sans-serif;
+font-weight: bold;
+font-size: 2rem;
+
+}
+
+body{
+	background: #e6e6e6;
+}
+
+body i{
+	color: #4682B4;
+}
+
+.services i{
+	font-size:4rem;
+	color: #4682B4;
+}
+.services i:hover{
+	color: #ffffff;
+}
