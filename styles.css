@@ -23,3 +23,12 @@ body i{
 .services i:hover{
 	color: #ffffff;
 }
+
+footer {
+	background: #212529;
+	color: white;
+}
+
+.usluge {
+	padding-bottom: 70px
+}
