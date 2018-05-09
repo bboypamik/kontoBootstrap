@@ -1,3 +1,12 @@
+
+body{
+	background: #e6e6e6;
+	font-family: 'Montserrat', sans-serif;
+}
+body i{
+	color: #4682B4;
+}
+
 .jumbotron {
 background-image: url(https://www.zybra.in/wp-content/uploads/2018/01/accountant-2.jpg);
 background-size: cover;
@@ -6,14 +15,6 @@ font-family: "Raleway", Helvetica, Arial, sans-serif;
 font-weight: bold;
 font-size: 2rem;
 
-}
-
-body{
-	background: #e6e6e6;
-}
-
-body i{
-	color: #4682B4;
 }
 
 .services i{
@@ -31,4 +32,32 @@ footer {
 
 .usluge {
 	padding-bottom: 70px
+}
+
+.sivaboja i{
+	font-size: 4rem;
+}
+.box{
+	background: #fff;
+	box-shadow: 1px 1px 10px rgba(0,0,0,0.2);
+	min-height: 170px;
+}
+.box:hover{
+	box-shadow: 1px 1px 10px rgba(0,0,0,0.4);
+}
+
+.logo {
+	font-size: 2rem;
+}
+
+.contacts i {
+	font-size: 3rem;
+}
+
+.forma {
+	box-shadow: 1px 1px 10px rgba(0,0,0,0.2);
+	
+}
+.forma:hover {
+	box-shadow: 1px 1px 10px rgba(0,0,0,0.4);
 }

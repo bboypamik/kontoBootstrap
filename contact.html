@@ -1,66 +1,89 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>konto</title>
-  <meta charset="utf-8">
+	<title>contact</title>
+	<meta charset="utf-8">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="styles.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
    <link href="https://fonts.googleapis.com/css?family=Montserrat&amp;subset=latin-ext" rel="stylesheet">
-
-
 </head>
 <body>
-   
-   <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+	<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
    <a href="index.html" class="navbar-brand logo"><i class="fas fa-paperclip"></i> KONTO</a>
    <div class="collapse navbar-collapse">
     <ul class="navbar-nav ml-auto ">
      <li class="nav-item"><a href="o-nama.html" class="nav-link">O NAMA</a></li>
      <li class="nav-item"><a href="services.html" class="nav-link">USLUGE</a></li>
      <li class="nav-item"><a href="" class="nav-link">GALERIJA</a></li>
-     <li class="nav-item"><a href="contact.html" class="nav-link">KONTAKT</a></li>
+     <li class="nav-item"><a href="" class="nav-link">KONTAKT</a></li>
    </ul>
      
    </div>
  </nav>
- 
-   <div class="jumbotron jumbotron-fluid bg-info  text-center">
-     <h1 class="display-1"> KONTO</h1>
-     <p>PREDUZEĆE ZA KNJIGOVODSTVENE USLUGE</p>
-   </div>
+ <div class="container pb-5">
+ 	<div class="row pt-5">
+ 		<div class="col-6">
+ 			<form>
+ 				<label for="username">Vaše ime</label>
+ 				<input type="text" name="username" class="form-control mb-2 forma">
+ 				<label for="email">email</label>
+ 				<input type="email" name="email" class="form-control mb-2 forma">
+ 				<label for="naslov">Naslov</label>
+ 				<input type="text" name="naslov" class="form-control mb-2 forma">
+ 				<label for="question">Vaše pitanje</label> 
+ 				<textarea cols="44" name="question" rows="10" class="form-control mb-2 forma"></textarea>
+ 				<button class="form-control mb-4 btn-primary forma">POŠALJI!</button>
+ 			</form>
+ 		</div>
+ 		<div class="col-1"></div>
+ 		<div class="col-5">
+ 			<h5>Želimo vam pomoći!</h5>
+ 			<p>Ako imate neko pitanje za nas možete popuniti kontakt formu ili nas možete direktno kontaktirati putem dolje navedenih informacija. Vaše zadovoljstvo nam je najvažnije! </p>
+ 			<h4>Konto d.o.o.</h4>
+ 			<div class="row mb-3">
+ 				<div class="col-2 contacts">
+ 					<i class="fas fa-map-marker-alt mt-4"></i>
+ 				</div>
+ 				<div class="col-10">
+ 					<p>Svetozara markovića 38</p> 
+ 					<p>21410</p> 
+ 					<p>Futog</p> 
+ 					<p>Republika Srbija</p>
+ 				</div>
+ 			</div>
+ 			<div class="row mb-3">
+ 				<div class="col-2 contacts">
+ 					<i class="fas fa-phone-square"></i>
+ 				</div>
+ 				<div class="col-10 ">
+ 					<p>021 895 454</p>
+ 					<p>069 565 0 665</p>
+ 				</div>
+ 			</div>
+ 			<div class="row mb-3">
+ 				<div class="col-2 contacts">
+ 					<i class="fas fa-envelope"></i>
+ 				</div>
+ 				<div class="col-10">
+ 					<p>bboypamik@gmail.com</p>
+ 				</div>
+ 			</div>
+ 			<div class="row">
+ 				<div class="col-2 contacts">
+ 					<i class="fas fa-fax"></i>
+ 				</div>
+ 				<div class="col-10">
+ 					<p>Fax: (033) 444 951</p>
+ 				</div>
+ 			</div>
+ 		</div>
+ 	</div>
+ </div>
 
-   <div class="container-fluid text-center usluge pb-5">
-    <h2 style="margin-bottom: 50px;color: #4682B4">NAŠE USLUGE</h2>
-    <div class="row services">
-      <div class="col-2" style="height: 200px">
-        
-      </div>
-      <div class="col-2 text-center" style="height: 200px">
-        <i class="fas fa-cogs"></i>
-        <h3>Stručni tim</h3>
-        <p>Tim uposlenika sa dugogodišnjim iskustvom brinu se o Vašem poslovanju!</p>
-      </div>
-      <div class="col-2" style="height: 200px">
-        <i class="far fa-lightbulb"></i>
-        <h3>Inovativne metode</h3>
-        <p>Koristimo nove i jednostavne metode u vođenju finansijskih usluga!</p>
-      </div>
-      <div class="col-2" style="height: 200px">
-        <i class="far fa-handshake"></i>
-        <h3>Kvalitetna usluga</h3>
-        <p>Pružamo redovne poslovne informacije prilagođene Vašim potrebama!</p>
-      </div>
-      <div class="col-2" style="height: 200px">
-        <i class="fas fa-lock"></i>
-        <h3>Sigurnost i povjerljivost</h3>
-        <p>Naše poslovanje provodi se u skladu s primjenjivim zakonima o zaštiti i sigurnosti podataka!</p>
-      </div>
-    </div>
-     
-   </div>
-   <!--Footer-->
-   <footer class="py-5">
+<iframe class="mt-5 " src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2809.479759256709!2d19.717335415884104!3d45.23809047909888!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475b0decf9ee82c1%3A0x66ee4c958a16efde!2sAgencija+Konto!5e0!3m2!1ssr!2srs!4v1525868265474" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+	<footer class="py-5">
      <div class="container-fluid">
        <div class="row">
         <div class="col-sm-1"></div>
@@ -98,11 +121,6 @@
        </div>
      </div>
    </footer>
-
- 
- 
-
-
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
