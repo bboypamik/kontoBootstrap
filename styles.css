@@ -21,9 +21,7 @@ font-size: 2rem;
 	font-size:4rem;
 	color: #4682B4;
 }
-.services i:hover{
-	color: #ffffff;
-}
+
 
 footer {
 	background: #212529;
@@ -59,5 +57,15 @@ footer {
 	
 }
 .forma:hover {
+	box-shadow: 1px 1px 10px rgba(0,0,0,0.4);
+}
+
+.box-usluge{
+	background: #fff;
+	box-shadow: 1px 1px 10px rgba(0,0,0,0.2);
+	min-height: 298px;
+}
+
+.box-usluge:hover{
 	box-shadow: 1px 1px 10px rgba(0,0,0,0.4);
 }
