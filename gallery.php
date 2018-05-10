@@ -1,27 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>gallery</title>
-	<meta charset="utf-8">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="styles.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
-   <link href="https://fonts.googleapis.com/css?family=Montserrat&amp;subset=latin-ext" rel="stylesheet">
-   <link rel="stylesheet" href="css/magnific-popup.css">
-</head>
-<body>
-	<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-   <a href="index.html" class="navbar-brand logo"><i class="fas fa-paperclip"></i> KONTO</a>
-   <div class="collapse navbar-collapse">
-    <ul class="navbar-nav ml-auto ">
-     <li class="nav-item"><a href="o-nama.html" class="nav-link">O NAMA</a></li>
-     <li class="nav-item"><a href="services.html" class="nav-link">USLUGE</a></li>
-     <li class="nav-item"><a href="" class="nav-link">GALERIJA</a></li>
-     <li class="nav-item"><a href="contact.html" class="nav-link">KONTAKT</a></li>
-   </ul>
-     
-   </div>
- </nav>
+
  <div class="container">
  	<h2 class="text-center p-5">GALERIJA</h2>
 
@@ -95,51 +72,3 @@
  </div>
 
 
-<footer class="py-5">
-     <div class="container-fluid">
-       <div class="row">
-        <div class="col-sm-1"></div>
-         <div class="col-sm-2">
-          <h6>Copyright &copy; 2018 Konto</h6>
-         </div>
-          <div class="col-sm-4">
-             <h6>About US</h6>
-             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-             quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-             consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-             cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-             proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-           </div>
-           <div class="col-sm-2">
-            <h6>Navigation</h6>
-            <ul class="unstyled">
-              <li><a href="">Home</a></li>
-               <li><a href="">Services</a></li>
-                <li><a href="">Links</a></li>
-                 <li><a href="">Contact</a></li>
-            </ul>
-          
-         </div>
-         <div class="col-sm-2">
-          <h6>Follow Us</h6>
-          <ul class="unstyled">
-              <li><a href="">Twitter</a></li>
-               <li><a href="">Facebook</a></li>
-                <li><a href="">Google Plus</a></li>
-            </ul>
-         </div>
-         
-       </div>
-     </div>
-   </footer>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
-
-<!-- Magnific Popup core JS file -->
-<script src="js/jquery.magnific-popup.js"></script>
-<script src="scripts.js"></script>
-</body>
-</html>

@@ -13,59 +13,49 @@
 <body>
    
    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-   <a href="index.html" class="navbar-brand logo"><i class="fas fa-paperclip"></i> KONTO</a>
+   <a href="index.php?stranica=index" class="navbar-brand logo"><i class="fas fa-paperclip"></i> KONTO</a>
    <div class="collapse navbar-collapse">
     <ul class="navbar-nav ml-auto ">
-     <li class="nav-item"><a href="o-nama.html" class="nav-link">O NAMA</a></li>
-     <li class="nav-item"><a href="services.html" class="nav-link">USLUGE</a></li>
-     <li class="nav-item"><a href="gallery.html" class="nav-link">GALERIJA</a></li>
-     <li class="nav-item"><a href="contact.html" class="nav-link">KONTAKT</a></li>
+     <li class="nav-item"><a href="index.php?stranica=about" class="nav-link">O NAMA</a></li>
+     <li class="nav-item"><a href="index.php?stranica=services" class="nav-link">USLUGE</a></li>
+     <li class="nav-item"><a href="index.php?stranica=gallery" class="nav-link">GALERIJA</a></li>
+     <li class="nav-item"><a href="index.php?stranica=contact" class="nav-link">KONTAKT</a></li>
    </ul>
      
    </div>
  </nav>
  
-   <div class="jumbotron jumbotron-fluid bg-info  text-center">
-     <h1 class="display-1"> KONTO</h1>
-     <p>PREDUZEĆE ZA KNJIGOVODSTVENE USLUGE</p>
-   </div>
+   <?php
+    $currentPage = $_GET['stranica'];
+    switch($currentPage){
+    
+    case 'index':
+    include 'pocetna.php';
+    break;
 
-   <div class="container-fluid text-center usluge pb-5">
-    <h2 style="margin-bottom: 50px;">NAŠE USLUGE</h2>
-    <div class="row services">
-      <div class="col-2" >
-        
-      </div>
-      <div class="col-2 text-center" >
-        <div class="box-usluge p-4">
+    case 'about':
+    include 'o-nama.php';
+    break;
 
-        <i class="fas fa-cogs"></i>
-        <h3>Stručni tim</h3>
-        <p>Tim uposlenika sa dugogodišnjim iskustvom brinu se o Vašem poslovanju!</p>
-        </div>
-      </div>
-      <div class="col-2" >
-        <div class="box-usluge p-4">
-        <i class="far fa-lightbulb"></i>
-        <h3>Inovativne metode</h3>
-        <p>Koristimo nove i jednostavne metode u vođenju finansijskih usluga!</p>
-      </div>
-      </div>
-      <div class="col-2" >
-        <div class="box-usluge p-4">
-        <i class="far fa-handshake"></i>
-        <h3>Kvalitetna usluga</h3>
-        <p>Pružamo redovne poslovne informacije prilagođene Vašim potrebama!</p>
-      </div>
-      </div>
-      <div class="col-2" >
-        <div class="box-usluge p-4">
-        <i class="fas fa-lock"></i>
-        <h3>Sigurnost i povjerljivost</h3>
-        <p>Naše poslovanje provodi se u skladu s primjenjivim zakonima o zaštiti i sigurnosti podataka!</p>
-      </div>
-      </div>
-    </div>
+    case 'services':
+    include 'services.php';
+    break;
+
+    case 'gallery':
+    include 'gallery.php';
+    break;
+
+    case 'contact':
+    include 'contact.php';
+    break;
+
+    default:
+    include 'pocetna.php';
+    break;
+
+  }
+    
+   ?>
      
    </div>
    <!--Footer-->
@@ -108,8 +98,6 @@
      </div>
    </footer>
 
- 
- 
 
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
