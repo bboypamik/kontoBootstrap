@@ -9,6 +9,15 @@
     <link rel="stylesheet" href="css/magnific-popup.css">
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
+
+<?php
+$dbServername ="localhost";
+$dbUsername = "root";
+$dbPassword = "btabta123";
+$dbName = "news";
+
+$conn = new PDO("mysql:host=$dbServername;dbname=$dbName", $dbUsername, $dbPassword);
+?>
 <body>
    
    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
@@ -55,6 +64,10 @@
 
     case 'singleNews':
     include 'singleNews.php';
+    break;
+
+    case 'newArticle':
+    include 'newArticle.php';
     break;
 
     default:
