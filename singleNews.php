@@ -9,19 +9,15 @@ $sql = "SELECT * FROM news WHERE id = '" . $id . "'";
 $statement = $conn->prepare($sql);
 $statement->execute();
 $statement->setFetchMode(PDO::FETCH_ASSOC);
-$vest = $statement->fetchAll();
+$vest = $statement->fetch();
 
 ?>
 
 <div class="container">
-    <?php foreach ($vest as $stavka) : ?>
-<h1 class="p-3"><?php echo $stavka["heading"] ?> </h1>
-<img class="pb-5" src="<?php echo $stavka["picture"] ?>" alt="picture">
+<h1 class="p-3"><?php echo $vest["heading"] ?> </h1>
+<img class="pb-5" src="<?php echo $vest["picture"] ?>" alt="picture">
 
-<p><?php echo $stavka["text"]?></p>
-
-    <?php endforeach; ?>
-
+<p><?php echo $vest["text"]?></p>
 </div>
 
 <img src="" alt="">

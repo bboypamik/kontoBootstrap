@@ -10,8 +10,9 @@ $picture = $_POST["picture"];
 
     $sql = "INSERT INTO news (heading, picture, text,user_id) VALUES ('$heading', '$picture', '$text', 1)";
 
-    if ($conn->query($sql) === TRUE) {
+    if ($conn->query($sql)) {
         echo "New record created successfully";
+        header('Location: index.php?stranica=listNews');
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
@@ -21,6 +22,7 @@ $picture = $_POST["picture"];
 <?php else: ?>
     <div class="container">
         <h2 class="text-center pt-5">NAPIŠITE VEST</h2>
+
         <form method="post">
             <label for="naslov">NASLOV</label>
             <input type="text" name="heading" class="form-control mb-2 forma">

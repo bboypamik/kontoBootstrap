@@ -1,3 +1,8 @@
+<?php
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,8 +11,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
    <link href="https://fonts.googleapis.com/css?family=Montserrat&amp;subset=latin-ext" rel="stylesheet">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="../css/magnific-popup.css">
+    <link rel="stylesheet" type="text/css" href="../styles.css">
 </head>
 
 <?php
@@ -17,26 +22,24 @@ $dbPassword = "btabta123";
 $dbName = "news";
 
 $conn = new PDO("mysql:host=$dbServername;dbname=$dbName", $dbUsername, $dbPassword);
-
-session_start();
 ?>
 <body>
    
    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-   <a href="index.php?stranica=index" class="navbar-brand logo"><i class="fas fa-paperclip"></i> KONTO</a>
+   <a href="../index.php?stranica=index" class="navbar-brand logo"><i class="fas fa-paperclip"></i> KONTO</a>
    <div class="collapse navbar-collapse">
     <ul class="navbar-nav ml-auto ">
-     <li class="nav-item"><a href="index.php?stranica=about" class="nav-link">O NAMA</a></li>
-     <li class="nav-item"><a href="index.php?stranica=services" class="nav-link">USLUGE</a></li>
-     <li class="nav-item"><a href="index.php?stranica=gallery" class="nav-link">GALERIJA</a></li>
-     <li class="nav-item"><a href="index.php?stranica=contact" class="nav-link">KONTAKT</a></li>
-        <li class="nav-item"><a href="index.php?stranica=news" class="nav-link">VESTI</a></li>
-        <?php if($_SESSION["is_logged"]):?>
-            <li class="nav-item"><a href="index.php?stranica=logout" class="nav-link">ODJAVI SE</a></li>
+     <li class="nav-item"><a href="../index.php?stranica=about" class="nav-link">O NAMA</a></li>
+     <li class="nav-item"><a href="../index.php?stranica=services" class="nav-link">USLUGE</a></li>
+     <li class="nav-item"><a href="../index.php?stranica=gallery" class="nav-link">GALERIJA</a></li>
+     <li class="nav-item"><a href="../index.php?stranica=contact" class="nav-link">KONTAKT</a></li>
+        <li class="nav-item"><a href="../index.php?stranica=news" class="nav-link">VESTI</a></li>
+        <?php if($_SESSION['is_logged']):?>
+            <li class="nav-item"><a href="../index.php?stranica=logout" class="nav-link">ODJAVI SE</a></li>
         <?php else: ?>
-         <li class="nav-item"><a href="index.php?stranica=login" class="nav-link">ULOGUJTE SE</a></li>
+            <li class="nav-item"><a href="../index.php?stranica=login" class="nav-link">ULOGUJTE SE</a></li>
         <?php endif; ?>
-        <li class="nav-item"><a href="admin/index.php?stranica=pocetna" class="nav-link">ADMIN</a></li>
+        <li class="nav-item"><a href="index.php?stranica=pocetna" class="nav-link">ADMIN</a></li>
    </ul>
      
    </div>
@@ -50,40 +53,27 @@ session_start();
     include 'pocetna.php';
     break;
 
-    case 'about':
-    include 'o-nama.php';
-    break;
-
-    case 'services':
-    include 'services.php';
-    break;
-
-    case 'gallery':
-    include 'gallery.php';
-    break;
-
-    case 'contact':
-    include 'contact.php';
+    case 'list':
+    include 'pocetna.php';
     break;
 
     case 'news':
     include 'news.php';
     break;
 
-    case 'singleNews':
-    include 'singleNews.php';
-    break;
-
     case 'newArticle':
     include 'newArticle.php';
     break;
-
-    case 'login':
-    include 'login.php';
+    case 'listNews':
+    include 'listNews.php';
     break;
 
-    case 'logout':
-    include 'logout.php';
+    case 'editNews':
+    include 'editNews.php';
+    break;
+
+    case 'deleteNews':
+    include 'deleteNews.php';
     break;
 
     default:
@@ -142,7 +132,7 @@ session_start();
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
-   <script src="js/jquery.magnific-popup.js"></script>
-   <script src="js/scripts.js"></script>
+   <script src="../js/jquery.magnific-popup.js"></script>
+   <script src="../js/scripts.js"></script>
 </body>
 </html>

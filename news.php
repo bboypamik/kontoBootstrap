@@ -1,4 +1,3 @@
-
 <?php
 
 $sql = "SELECT * FROM news";
@@ -19,11 +18,7 @@ $id = $_GET["id"];
 
 
 ?>
-<div class="row">
-    <div class="col-2 offset-4 form-control mb-5 mt-5 btn-primary forma ">
-        <a class="p-5 text-light " href="index.php?stranica=newArticle">  KREIRAJ VEST</a>
-    </div>
-</div>
+
 
 
 <div class="container">
@@ -40,8 +35,4 @@ $id = $_GET["id"];
 
 </div>
 
-<div class="row">
-    <div class="col-2 offset-4 form-control mb-5 btn-primary forma ">
-        <a class="p-5 text-light " href="index.php?stranica=newArticle">  KREIRAJ VEST</a>
-    </div>
-</div>
+
