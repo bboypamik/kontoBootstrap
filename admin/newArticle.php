@@ -8,7 +8,7 @@ $heading = $_POST['heading'];
 $text =    $_POST['text'];
 $picture = $_POST["picture"];
 
-    $sql = "INSERT INTO news (heading, picture, text,user_id) VALUES ('$heading', '$picture', '$text', 1)";
+    $sql = "INSERT INTO news (heading, picture, text,) VALUES ('$heading', '$picture', '$text')";
 
     if ($conn->query($sql)) {
         echo "New record created successfully";

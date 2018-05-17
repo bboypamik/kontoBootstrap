@@ -16,10 +16,13 @@ $dbUsername = "root";
 $dbPassword = "btabta123";
 $dbName = "news";
 
+
+
 $conn = new PDO("mysql:host=$dbServername;dbname=$dbName", $dbUsername, $dbPassword);
 
 session_start();
 ?>
+
 <body>
    
    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
@@ -33,6 +36,8 @@ session_start();
         <li class="nav-item"><a href="index.php?stranica=news" class="nav-link">VESTI</a></li>
         <?php if($_SESSION["is_logged"]):?>
             <li class="nav-item"><a href="index.php?stranica=logout" class="nav-link">ODJAVI SE</a></li>
+            <li class="nav-item"><a href="" class="nav-link"><?php echo $_SESSION["username"]?></a></li>
+
         <?php else: ?>
          <li class="nav-item"><a href="index.php?stranica=login" class="nav-link">ULOGUJTE SE</a></li>
         <?php endif; ?>
@@ -84,6 +89,10 @@ session_start();
 
     case 'logout':
     include 'logout.php';
+    break;
+
+    case 'registration':
+    include 'registration.php';
     break;
 
     default:

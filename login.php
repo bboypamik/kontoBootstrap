@@ -1,22 +1,32 @@
+
 <?php if (isset($_POST["submit"])) :?>
 
 <?php
-    $email = "bboypamik@gmail.com";
-    $password = "btabta123";
 
-    session_start();
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    $sql = "SELECT * FROM users WHERE email = :email AND password = :password ";
+    $statement = $conn->prepare($sql);
+    $statement->bindParam(":email",$email);
+    $statement->bindParam(":password",$password);
+    $statement->execute();
+    $login = $statement->fetch();
 
 
-    if ($_POST["email"] == $email && $_POST["password"] == $password){
+    if ($login ){
         $_SESSION["is_logged"] = true;
+        $_SESSION["username"] = $login['username'];
+
         header('Location: admin/index.php?stranica=pocetna');
     }
     else{
-        header('Location: http://localhost/kontoBootstrap/index.php?stranica=login');
+        echo "Pogrešno korisničko ime ili lozionka, probajte ponovo.";
     }
 
     ?>
 <?php else: ?>
+
 
 <div class="container">
     <h2 class="m-5">ULOGUJTE SE</h2>
@@ -27,6 +37,8 @@
         <label for="password">Šifra</label>
         <input type="password" name="password" required class="form-control mb-2 forma">
         <input type="submit"  name="submit" value="LOGIN" class="form-control mb-4 btn-primary forma mb-5">
+        <p>Nemate nalog?</p><a class="form-control mb-4 btn-primary forma mb-5 col-2" href="index.php?stranica=registration">Registrujte se</a>
+
     </form>
 </div>
 
