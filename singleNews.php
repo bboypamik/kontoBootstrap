@@ -15,7 +15,7 @@ $vest = $statement->fetch();
 
 <div class="container">
 <h1 class="p-3"><?php echo $vest["heading"] ?> </h1>
-<img class="pb-5" src="<?php echo $vest["picture"] ?>" alt="picture">
+<img class="pb-5" src="uploads/<?php echo $vest["picture"] ?>" alt="picture">
 
 <p><?php echo $vest["text"]?></p>
 </div>

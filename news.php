@@ -1,6 +1,6 @@
 <?php
 
-$sql = "SELECT * FROM news";
+$sql = "SELECT news.id, heading, picture, text, username FROM news INNER JOIN users ON users.id = news.user_id";
 
 $statement = $conn->prepare($sql);
 
@@ -14,6 +14,8 @@ function skracivanje($opis){
     return substr($opis,0,80 ).'...';
 
 $id = $_GET["id"];
+
+
 }
 
 
@@ -27,8 +29,8 @@ $id = $_GET["id"];
     <div class="col-7 pb-5">
     <h2 class="pb-3"><a href="index.php?stranica=singleNews&id=<?php echo $vest["id"] ?>"><?php echo $vest["heading"] ?></a></h2>
     <h5> <?php echo skracivanje($vest["text"]) ?> </h5>
-    <p><?php echo $vest["autor"] ?> <?php echo $vest["datum"] ?> <?php echo $vest["vreme"] ?> </p>
-    <img src="<?php echo $vest["picture"] ?>" alt="slika">
+    <p><?php echo $vest["username"] ?> <?php echo $vest["datum"] ?> <?php echo $vest["vreme"] ?> </p>
+    <img src="uploads/<?php echo $vest["picture"] ?>" alt="slika">
     </div>
     <?php endforeach; ?>
     </div>

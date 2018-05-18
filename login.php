@@ -17,7 +17,7 @@
     if ($login ){
         $_SESSION["is_logged"] = true;
         $_SESSION["username"] = $login['username'];
-
+        $_SESSION["user_id"] = $login['id'];
         header('Location: admin/index.php?stranica=pocetna');
     }
     else{
