@@ -104,6 +104,10 @@ $conn = new PDO("mysql:host=$dbServername;dbname=$dbName", $dbUsername, $dbPassw
     include 'noviKlijent.php';
     break;
 
+    case 'editKlijent':
+    include 'editKlijent.php';
+    break;
+
     case 'klijentInformations':
     include 'klijentInformations.php';
     break;

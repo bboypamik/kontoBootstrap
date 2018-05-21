@@ -32,7 +32,7 @@ $klijenti = $statement->fetchAll();
 
         <td><?php echo $klijent["id"] ?></td>
         <td><a href="index.php?stranica=klijentInformation&id=<?php echo $klijent["id"] ?>"><?php echo $klijent["ime_firme"]?></a></td>
-        <td><a href="index.php?stranica=noviKlijent&id=<?php echo $klijent["id"] ?>"><i class="fas fa-pencil-alt"></i></a></td>
+        <td><a href="index.php?stranica=editKlijent&id=<?php echo $klijent["id"] ?>"><i class="fas fa-pencil-alt"></i></a></td>
         <td><a onclick="myFunction()" href="#"><i class="fas fa-trash-alt"></i></a></td>
 
         </tbody>
