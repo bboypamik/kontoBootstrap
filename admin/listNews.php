@@ -10,10 +10,6 @@ $statement->setFetchMode(PDO::FETCH_ASSOC);
 
 $vesti = $statement->fetchAll();
 
-$id = $_GET["id"];
-
-
-
 
 
 ?>

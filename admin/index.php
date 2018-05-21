@@ -24,8 +24,7 @@ $dbName = "news";
 $conn = new PDO("mysql:host=$dbServername;dbname=$dbName", $dbUsername, $dbPassword);
 ?>
 <body>
-<?php echo $_SESSION["username"] ?>
-   
+
    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
    <a href="../index.php?stranica=index" class="navbar-brand logo"><i class="fas fa-paperclip"></i> KONTO</a>
    <div class="collapse navbar-collapse">
@@ -35,17 +34,36 @@ $conn = new PDO("mysql:host=$dbServername;dbname=$dbName", $dbUsername, $dbPassw
      <li class="nav-item"><a href="../index.php?stranica=gallery" class="nav-link">GALERIJA</a></li>
      <li class="nav-item"><a href="../index.php?stranica=contact" class="nav-link">KONTAKT</a></li>
         <li class="nav-item"><a href="../index.php?stranica=news" class="nav-link">VESTI</a></li>
-        <?php if($_SESSION['is_logged']):?>
-            <li class="nav-item"><a href="../index.php?stranica=logout" class="nav-link">ODJAVI SE</a></li>
-            <li class="nav-item"><a href="" class="nav-link"><?php echo $_SESSION["username"]?></a></li>
-        <?php else: ?>
+        <?php if(!$_SESSION['is_logged']):?>
             <li class="nav-item"><a href="../index.php?stranica=login" class="nav-link">ULOGUJTE SE</a></li>
+        <?php else: ?>
+            <li class="nav-item"><a href="../index.php?stranica=logout" class="nav-link">ODJAVI SE</a></li>
         <?php endif; ?>
-        <li class="nav-item"><a href="index.php?stranica=pocetna" class="nav-link">ADMIN</a></li>
+
    </ul>
+
+
      
    </div>
  </nav>
+   <?php if($_SESSION['is_logged']):?>
+
+   <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+
+       <div class="collapse navbar-collapse">
+           <ul class="navbar-nav ml-auto ">
+
+
+               <li class="nav-item"><a href="index.php?stranica=pocetna" class="nav-link">ADMIN</a></li>
+               <li class="nav-item"><a href="index.php?stranica=klijenti" class="nav-link">Klijenti</a></li>
+           </ul>
+
+
+
+       </div>
+   </nav>
+
+   <?php endif; ?>
  
    <?php
     $currentPage = $_GET['stranica'];
@@ -76,6 +94,18 @@ $conn = new PDO("mysql:host=$dbServername;dbname=$dbName", $dbUsername, $dbPassw
 
     case 'deleteNews':
     include 'deleteNews.php';
+    break;
+
+    case 'klijenti':
+    include 'klijenti.php';
+    break;
+
+    case 'noviKlijent':
+    include 'noviKlijent.php';
+    break;
+
+    case 'klijentInformations':
+    include 'klijentInformations.php';
     break;
 
     default:
