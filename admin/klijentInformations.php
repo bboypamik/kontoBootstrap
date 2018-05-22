@@ -52,3 +52,36 @@ if ($statement->errorCode() == 0) {
         <td><?php echo $klijent["pib"] ?></td>
     </tr>
 </table>
+
+<?php
+
+
+$id = $_GET["id"];
+$sql = "SELECT * FROM placanje WHERE klijent_id = '" . $id . "'";
+
+$statement = $conn->prepare($sql);
+
+$statement->execute();
+
+$statement->setFetchMode(PDO::FETCH_ASSOC);
+
+$meseci = $statement->fetchAll();
+
+?>
+
+<h2 class="mt-5">Plaćanje</h2>
+
+<table class="table table-striped">
+    <?php foreach ($meseci as $mesec) : ?>
+        <tr>
+            <td><?php echo $mesec["mesec"] ?></td>
+            <td><?php echo $mesec["din"] ?></td>
+        </tr>
+    <?php endforeach; ?>
+
+</table>
+<div class="row">
+    <div class="col-2">
+<a class="form-control btn-primary forma mt-2 mb-2 text-center" href="index.php?stranica=evidentiranje_uplate&id=<?php echo $_GET['id'] ?>">Evidentiraj uplatu</a>
+</div>
+</div>

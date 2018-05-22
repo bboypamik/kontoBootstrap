@@ -112,6 +112,10 @@ $conn = new PDO("mysql:host=$dbServername;dbname=$dbName", $dbUsername, $dbPassw
     include 'klijentInformations.php';
     break;
 
+    case 'evidentiranje_uplate':
+    include 'evidentiranje_uplate.php';
+    break;
+
     default:
     include 'pocetna.php';
     break;
