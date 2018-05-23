@@ -16,12 +16,8 @@ session_start();
 </head>
 
 <?php
-$dbServername ="localhost";
-$dbUsername = "root";
-$dbPassword = "btabta123";
-$dbName = "news";
-
-$conn = new PDO("mysql:host=$dbServername;dbname=$dbName", $dbUsername, $dbPassword);
+include '../includes/db.php';
+include '../includes/functions.php';
 ?>
 <body>
 
@@ -114,6 +110,22 @@ $conn = new PDO("mysql:host=$dbServername;dbname=$dbName", $dbUsername, $dbPassw
 
     case 'evidentiranje_uplate':
     include 'evidentiranje_uplate.php';
+    break;
+
+    case 'deleteKlijent':
+    include 'deleteKlijent.php';
+    break;
+
+    case 'pitanja':
+    include 'pitanja.php';
+    break;
+
+    case 'pitanje':
+    include 'pitanje.php';
+    break;
+
+    case 'deletePitanje':
+    include 'deletePitanje.php';
     break;
 
     default:

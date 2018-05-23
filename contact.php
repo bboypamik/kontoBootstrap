@@ -1,8 +1,26 @@
+<?php if (isset($_POST["submit"])) : ?>
+<?php
+$ime = $_POST['username'];
+$email = $_POST['email'];
+$naslov = $_POST['naslov'];
+$upit = $_POST['question'];
 
- <div class="container pb-5">
+$sql = "INSERT INTO pitanja (ime, email, naslov, pitanje) VALUES ('$ime', '$email', '$naslov','$upit')";
+if ($conn->query($sql)) {
+    echo "Vaše pitanje je prosledjeno";
+    header('Location: index.php?stranica=index');
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+}
+?>
+
+
+<?php else: ?>
+
+<div class="container pb-5">
  	<div class="row pt-5">
  		<div class="col-6">
- 			<form>
+ 			<form method="post">
  				<label for="username">Vaše ime</label>
  				<input type="text" name="username" class="form-control mb-2 forma">
  				<label for="email">email</label>
@@ -11,7 +29,7 @@
  				<input type="text" name="naslov" class="form-control mb-2 forma">
  				<label for="question">Vaše pitanje</label> 
  				<textarea cols="44" name="question" rows="10" class="form-control mb-2 forma"></textarea>
- 				<button class="form-control mb-4 btn-primary forma">POŠALJI!</button>
+                <input type="submit" name="submit" value="POŠALJI" class="form-control mb-4 btn-primary forma mb-5">
  			</form>
  		</div>
  		<div class="col-1"></div>
@@ -61,4 +79,4 @@
 
 <iframe class="mt-5 " src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2809.479759256709!2d19.717335415884104!3d45.23809047909888!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475b0decf9ee82c1%3A0x66ee4c958a16efde!2sAgencija+Konto!5e0!3m2!1ssr!2srs!4v1525868265474" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 
-	
+<?php endif; ?>

@@ -1,12 +1,5 @@
 <?php
-$sql = "SELECT * FROM klijenti";
-$statement = $conn->prepare($sql);
-
-$statement->execute();
-
-$statement->setFetchMode(PDO::FETCH_ASSOC);
-
-$klijenti = $statement->fetchAll();
+$klijenti = getAll('klijenti');
 ?>
 
 
@@ -42,9 +35,9 @@ $klijenti = $statement->fetchAll();
 
 <script>
     function myFunction() {
-        var conf = confirm("Da li želite da obrišete vest?");
+        var conf = confirm("Da li želite da obrišete klijenta?");
         if(conf == true){
-            window.location.replace('index.php?stranica=deleteNews&id=<?php echo $vest["id"] ?>');
+            window.location.replace('index.php?stranica=deleteKlijent&id=<?php echo $klijent["id"] ?>');
         }
 
     }

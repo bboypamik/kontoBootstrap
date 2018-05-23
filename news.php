@@ -1,23 +1,11 @@
 <?php
 
-
-$sql = "SELECT news.id, heading, picture, text, username FROM news INNER JOIN users ON users.id = news.user_id";
-$statement = $conn->prepare($sql);
-$statement->execute();
-
-if ($statement->errorCode() == 0) {
-    $statement->setFetchMode(PDO::FETCH_ASSOC);
-    $vesti = $statement->fetchAll();
-} else {
-    $errors = $statement->errorInfo();
-    echo $errors[2] ;
-}
+$vesti = getAll('news', 'users', 'users.id = news.user_id');
 
 
 function skracivanje($opis)
 {
     return substr($opis, 0, 80) . '...';
-    $id = $_GET["id"];
 }
 
 

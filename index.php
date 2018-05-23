@@ -11,15 +11,8 @@
 </head>
 
 <?php
-$dbServername ="localhost";
-$dbUsername = "root";
-$dbPassword = "btabta123";
-$dbName = "news";
-
-
-
-$conn = new PDO("mysql:host=$dbServername;dbname=$dbName", $dbUsername, $dbPassword);
-
+include 'includes/db.php';
+include 'includes/functions.php';
 session_start();
 ?>
 

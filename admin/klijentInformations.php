@@ -1,20 +1,6 @@
 
 <?php
-
-$id = $_GET["id"];
-$sql = "SELECT * FROM klijenti WHERE id = '" . $id . "'";
-$statement = $conn->prepare($sql);
-$statement->execute();
-
-if ($statement->errorCode() == 0) {
-    $statement->setFetchMode(PDO::FETCH_ASSOC);
-    $klijent = $statement->fetch();
-} else {
-    $errors = $statement->errorInfo();
-    echo $errors[2] ;
-}
-
-
+$klijent = getOne("klijenti", $_GET["id"]);
 
 
 ?>
@@ -57,15 +43,17 @@ if ($statement->errorCode() == 0) {
 
 
 $id = $_GET["id"];
-$sql = "SELECT * FROM placanje WHERE klijent_id = '" . $id . "'";
+//$sql = "SELECT * FROM placanje WHERE klijent_id = '" . $id . "'";
+//
+//$statement = $conn->prepare($sql);
+//
+//$statement->execute();
+//
+//$statement->setFetchMode(PDO::FETCH_ASSOC);
+//
+//$meseci = $statement->fetchAll();
 
-$statement = $conn->prepare($sql);
-
-$statement->execute();
-
-$statement->setFetchMode(PDO::FETCH_ASSOC);
-
-$meseci = $statement->fetchAll();
+$meseci = getAll("placanje",null,null, 'klijent_id='.$id);
 
 ?>
 

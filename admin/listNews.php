@@ -1,16 +1,6 @@
 <?php
 
-$sql = "SELECT * FROM news";
-
-$statement = $conn->prepare($sql);
-
-$statement->execute();
-
-$statement->setFetchMode(PDO::FETCH_ASSOC);
-
-$vesti = $statement->fetchAll();
-
-
+$vesti = getAll(news);
 
 ?>
 
