@@ -79,15 +79,18 @@ $month_array = array(
     '11' => 'Novembar',
     '12' => 'Decembar'
 );
+
+$danger = "table-danger";
+$success = "table-success";
 ?>
 <h2 class="mt-5">Plaćanje</h2>
 <table class="table table-striped">
     <thead>
-    <tr>
-        <td>Mesec</td>
-        <td>Uplata</td>
-        <td>Mesečno održavanje</td>
-        <td>Dug</td>
+    <tr class="table-success">
+        <th>Mesec</th>
+        <th>Uplata</th>
+        <th>Mesečno održavanje</th>
+        <th>Dug</th>
     </tr>
     </thead>
     <tbody>
@@ -101,12 +104,14 @@ $month_array = array(
 
     <?php
 
-    $ukupan_dug = $ukupan_dug +($novi_niz[$dt->format("Ym")] - $klijent["placanje"]);
+ $ukupan_dug = $ukupan_dug +($novi_niz[$dt->format("Ym")] - $klijent["placanje"]);
+
         ?>
     <?php endforeach; ?>
+
     </tbody>
     <tfoot>
-    <tr>
+    <tr class="table-<?php echo ($ukupan_dug > 0) ? 'success' : 'danger'?>">
         <td></td>
         <td></td>
         <td>UKUPNO ZADUŽENJE</td>
@@ -114,6 +119,7 @@ $month_array = array(
     </tr>
     </tfoot>
 </table>
+
 
 
 
