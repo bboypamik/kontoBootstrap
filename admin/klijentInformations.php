@@ -1,16 +1,17 @@
-
 <?php
 $klijent = getOne("klijenti", $_GET["id"]);
 
+$datum_kreiranja = $klijent["date_of_creation"];
+$datum_kreiranja = date("Y-m-d", strtotime($datum_kreiranja));
 
 ?>
 
 
 <table class="table table-striped">
     <tr>
-<td>
-    Ime firme
-</td>
+        <td>
+            Ime firme
+        </td>
         <td> <?php echo $klijent["ime_firme"] ?> </td>
     </tr>
     <tr>
@@ -37,39 +38,82 @@ $klijent = getOne("klijenti", $_GET["id"]);
         <td>pib</td>
         <td><?php echo $klijent["pib"] ?></td>
     </tr>
+    <tr>
+        <td>Datum kreiranja:</td>
+        <td><?php echo $datum_kreiranja ?></td>
+    </tr>
 </table>
 
 <?php
 
 
 $id = $_GET["id"];
-//$sql = "SELECT * FROM placanje WHERE klijent_id = '" . $id . "'";
-//
-//$statement = $conn->prepare($sql);
-//
-//$statement->execute();
-//
-//$statement->setFetchMode(PDO::FETCH_ASSOC);
-//
-//$meseci = $statement->fetchAll();
 
-$meseci = getAll("placanje",null,null, 'klijent_id='.$id);
+$meseci = getAll("placanje", null, null, 'klijent_id=' . $id);
 
+$date = $meseci['month_year'];
+$month = substr($date, 0, 1);
+$year = substr($date, 2, 5);
+
+foreach ($meseci as $mesec) {
+    $novi_niz[$mesec['month_year']] = $mesec['din'];
+}
+//echo "<pre>";
+//print_r($novi_niz);
+//echo "</pre>";
+$start = (new DateTime($datum_kreiranja))->modify('first day of this month');
+$end = (new DateTime(date('Y-m-d')))->modify('first day of next month');
+$interval = DateInterval::createFromDateString('1 month');
+$period = new DatePeriod($start, $interval, $end);
+$month_array = array(
+    '01' => 'Januar',
+    '02' => 'Februar',
+    '03' => 'Mart',
+    '04' => 'April',
+    '05' => 'Maj',
+    '06' => 'Jun',
+    '07' => 'Jul',
+    '08' => 'Avgust',
+    '09' => 'Septembar',
+    '10' => 'Oktobar',
+    '11' => 'Novembar',
+    '12' => 'Decembar'
+);
 ?>
-
 <h2 class="mt-5">Plaćanje</h2>
-
 <table class="table table-striped">
-    <?php foreach ($meseci as $mesec) : ?>
+    <thead>
+    <tr>
+        <td>Mesec</td>
+        <td>Uplata</td>
+        <td>Mesečno održavanje</td>
+        <td>Dug</td>
+    </tr>
+    </thead>
+    <tbody>
+    <?php foreach ($period as $dt): ?>
         <tr>
-            <td><?php echo $mesec["mesec"] ?></td>
-            <td><?php echo $mesec["din"] ?></td>
+            <td><?php echo $month_array[$dt->format("m")]; ?></td>
+            <td><?php echo $novi_niz[$dt->format("Ym")]; ?></td>
+            <td><?php echo $klijent["placanje"] ?></td>
+            <td><?php echo $novi_niz[$dt->format("Ym")] - $klijent["placanje"] ?></td>
         </tr>
-    <?php endforeach; ?>
 
+    <?php
+
+    $ukupan_dug = $ukupan_dug +($novi_niz[$dt->format("Ym")] - $klijent["placanje"]);
+        ?>
+    <?php endforeach; ?>
+    </tbody>
+    <tfoot>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>UKUPNO ZADUŽENJE</td>
+        <td><?php echo $ukupan_dug ?></td>
+    </tr>
+    </tfoot>
 </table>
-<div class="row">
-    <div class="col-2">
-<a class="form-control btn-primary forma mt-2 mb-2 text-center" href="index.php?stranica=evidentiranje_uplate&id=<?php echo $_GET['id'] ?>">Evidentiraj uplatu</a>
-</div>
-</div>
+
+
+
