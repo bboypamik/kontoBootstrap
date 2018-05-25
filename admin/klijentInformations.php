@@ -58,13 +58,17 @@ $year = substr($date, 2, 5);
 foreach ($meseci as $mesec) {
     $novi_niz[$mesec['month_year']] = $mesec['din'];
 }
-//echo "<pre>";
+//echo "Novi Niz: <pre>";
 //print_r($novi_niz);
 //echo "</pre>";
 $start = (new DateTime($datum_kreiranja))->modify('first day of this month');
 $end = (new DateTime(date('Y-m-d')))->modify('first day of next month');
 $interval = DateInterval::createFromDateString('1 month');
 $period = new DatePeriod($start, $interval, $end);
+//echo "Novi Niz: <pre>";
+//print_r($period);
+//echo "</pre>";
+
 $month_array = array(
     '01' => 'Januar',
     '02' => 'Februar',
@@ -80,8 +84,7 @@ $month_array = array(
     '12' => 'Decembar'
 );
 
-$danger = "table-danger";
-$success = "table-success";
+
 ?>
 <h2 class="mt-5">Plaćanje</h2>
 <table class="table table-striped">
@@ -120,6 +123,8 @@ $success = "table-success";
     </tfoot>
 </table>
 
-
-
-
+<div class="row">
+    <div class="col-2">
+<a href="index.php?stranica=evidentiranje_uplate&id=<?php echo $id ?>" class="form-control mb-4 btn-primary forma mb-5">evidentiraj uplatu</a>
+</div>
+</div>
