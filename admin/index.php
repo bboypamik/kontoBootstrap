@@ -128,6 +128,10 @@ include '../includes/functions.php';
     include 'deletePitanje.php';
     break;
 
+    case 'klijentiIzvestaj':
+    include 'klijentiIzvestaj.php';
+    break;
+
     default:
     include 'pocetna.php';
     break;

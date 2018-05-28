@@ -8,6 +8,9 @@ $klijenti = getAll('klijenti');
     <div class="col-1 m-2">
 <a class="form-control btn-primary forma" href="index.php?stranica=noviKlijent">Dodaj novog klijenta</a>
     </div>
+    <div class="col-1 m-2">
+        <a class="form-control btn-primary forma" href="index.php?stranica=klijentiIzvestaj">Izveštaj</a>
+    </div>
 </div>
 <table class="table table-striped">
     <thead>

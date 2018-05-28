@@ -109,6 +109,7 @@ $month_array = array(
 
  $ukupan_dug = $ukupan_dug +($novi_niz[$dt->format("Ym")] - $klijent["placanje"]);
 
+
         ?>
     <?php endforeach; ?>
 
